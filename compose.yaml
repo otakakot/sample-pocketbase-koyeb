@@ -1,0 +1,12 @@
+services:
+  pocketbase:
+    container_name: pocketbase
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PB_VERSION=${PB_VERSION}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./pb_data:/pb/pb_data
